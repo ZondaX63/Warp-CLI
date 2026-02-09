@@ -18,7 +18,7 @@ sha256sums=('SKIP'
 build() {
   cd "Warp-CLI-$pkgver"
   npm install
-  npm run tauri build
+  npm run tauri build -- --no-bundle
 }
 
 package() {
