@@ -32,11 +32,44 @@ build() {
   npm run tauri build
 }
 
-package() {
-  install -Dm755 "$srcdir/src-tauri/target/release/warppulse" "$pkgdir/usr/bin/warppulse"
-  # Desktop entry and icons installation logic here
-}
+## Installation
+
+### From Package (.deb / .rpm)
+Install the generated package using your package manager:
+```bash
+# Debian/Ubuntu
+sudo dpkg -i src-tauri/target/release/bundle/deb/WarpPulse_0.1.0_amd64.deb
+
+# Fedora/RPM
+sudo rpm -i src-tauri/target/release/bundle/rpm/WarpPulse-0.1.0-1.x86_64.rpm
 ```
+
+### Manual Binary Installation
+```bash
+sudo cp src-tauri/target/release/warppulse /usr/bin/warppulse
+sudo chmod +x /usr/bin/warppulse
+```
+
+## Autostart Setup
+
+### Option 1: Desktop Autostart (Recommended)
+Copy the `.desktop` file to your autostart directory:
+```bash
+mkdir -p ~/.config/autostart
+cp warppulse.desktop ~/.config/autostart/
+```
+
+### Option 2: Systemd User Service
+Install and enable the systemd service for the current user:
+```bash
+mkdir -p ~/.config/systemd/user
+cp warppulse.service ~/.config/systemd/user/
+systemctl --user daemon-reload
+systemctl --user enable warppulse.service
+systemctl --user start warppulse.service
+```
+
+## AUR Instructions (Arch Linux)
 
 ## License
 MIT

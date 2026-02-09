@@ -27,3 +27,17 @@ dist-ssr
 src-tauri/target
 src-tauri/gen
 src-tauri/bin
+
+# IDEs
+.idea
+.vscode/
+
+# Build artifacts
+dist
+dist-ssr
+build
+out
+
+# OS files
+.DS_Store
+Thumbs.db

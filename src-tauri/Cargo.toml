@@ -1,9 +1,11 @@
 [package]
-name = "warp-gui-app"
+name = "warppulse"
 version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
+description = "The ultimate premium GUI for Cloudflare Warp on Linux."
+authors = ["Antigravity (WarpPulse Team)"]
+license = "MIT"
 edition = "2021"
+rust-version = "1.77"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
