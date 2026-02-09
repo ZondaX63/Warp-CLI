@@ -11,9 +11,9 @@ makedepends=('nodejs' 'npm' 'rust' 'cargo')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/ZondaX63/Warp-CLI/archive/refs/tags/v$pkgver.tar.gz"
         "warppulse.desktop"
         "warppulse.service")
-sha256sums=('SKIP'
-            'SKIP'
-            'SKIP')
+sha256sums=('c1b74944d65b0afbbc704fb892938a149e76c7acd2e9051caa2c4ffaa7e47db0'
+            '3a9555fcd461b28fecf1745834c31567391fefd7722d3db0b59c29f279199c92'
+            'b3a56263989dd5b490841925e86428b7bfd7baac3a655316ab2a6121eb970f7e')
 
 build() {
   cd "Warp-CLI-$pkgver"
