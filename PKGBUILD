@@ -4,11 +4,11 @@ pkgver=0.1.0
 pkgrel=1
 pkgdesc="The ultimate premium GUI for Cloudflare Warp on Linux."
 arch=('x86_64')
-url="https://github.com/yourusername/warppulse"
+url="https://github.com/ZondaX63/Warp-CLI"
 license=('MIT')
 depends=('warp-cli' 'gtk3' 'webkit2gtk-4.1' 'libappindicator-gtk3' 'librsvg')
 makedepends=('nodejs' 'npm' 'rust' 'cargo')
-source=("$pkgname-$pkgver.tar.gz::https://github.com/yourusername/$pkgname/archive/refs/tags/v$pkgver.tar.gz"
+source=("$pkgname-$pkgver.tar.gz::https://github.com/ZondaX63/Warp-CLI/archive/refs/tags/v$pkgver.tar.gz"
         "warppulse.desktop"
         "warppulse.service")
 sha256sums=('SKIP'
@@ -16,13 +16,13 @@ sha256sums=('SKIP'
             'SKIP')
 
 build() {
-  cd "$pkgname-$pkgver"
+  cd "Warp-CLI-$pkgver"
   npm install
   npm run tauri build
 }
 
 package() {
-  cd "$pkgname-$pkgver"
+  cd "Warp-CLI-$pkgver"
   
   # Install binary
   install -Dm755 "src-tauri/target/release/warppulse" "$pkgdir/usr/bin/warppulse"
